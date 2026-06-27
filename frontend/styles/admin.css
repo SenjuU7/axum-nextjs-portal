@@ -1,0 +1,331 @@
+/* ───────────────────────────────────────────────
+   News Portal — Global Styles
+   Extracted from NewsPage inline styles
+   ─────────────────────────────────────────────── */
+
+/* ── Variables ── */
+:root {
+  --news-green-light: #e1f5ee;
+  --news-green-mid: #5dcaa5;
+  --news-green: #1d9e75;
+  --news-green-dark: #0f6e56;
+  --news-green-deeper: #085041;
+
+  --news-blue-light: #e6f1fb;
+  --news-blue: #185fa5;
+
+  --news-red-light: #faece7;
+  --news-red-border: #f0997b;
+  --news-red: #993c1d;
+
+  --news-gray-border: #e5e7eb;
+  --news-gray-mid: #d1d5db;
+  --news-gray-text: #6b7280;
+  --news-gray-muted: #9ca3af;
+  --news-text: #111827;
+
+  --news-radius-sm: 6px;
+  --news-radius: 8px;
+  --news-radius-lg: 12px;
+
+  --news-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --news-transition: 0.15s ease;
+}
+
+/* ── Page layout ── */
+.news-page {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  font-family: system-ui, sans-serif;
+}
+
+/* ── Card base ── */
+.news-card {
+  background: #ffffff;
+  border: 0.5px solid var(--news-gray-border);
+  border-radius: var(--news-radius-lg);
+  box-shadow: var(--news-shadow);
+}
+
+/* ── Form card ── */
+.news-form-card {
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.news-form-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.25rem;
+}
+
+.news-form-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--news-green-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.news-form-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--news-text);
+  margin: 0;
+}
+
+.news-form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-right: 25px;
+}
+
+/* ── Form fields ── */
+.news-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--news-gray-text);
+  margin-bottom: 5px;
+}
+
+.news-input,
+.news-textarea {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 0.5px solid var(--news-gray-mid);
+  border-radius: var(--news-radius);
+  background-color: #ffffff;
+  color: var(--news-text);
+  outline: none;
+  font-family: inherit;
+  transition:
+    border-color var(--news-transition),
+    box-shadow var(--news-transition);
+  box-sizing: border-box;
+}
+
+.news-textarea {
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.news-input-small {
+  width: 100px;
+}
+
+.news-input:focus,
+.news-textarea:focus {
+  border-color: var(--news-green-mid);
+  box-shadow: 0 0 0 3px rgba(93, 202, 165, 0.15);
+}
+
+/* ── Submit button ── */
+.news-submit {
+  width: 100%;
+  padding: 9px;
+  background: var(--news-green);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--news-radius);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background var(--news-transition);
+}
+
+.news-submit:hover:not(:disabled) {
+  background: var(--news-green-dark);
+}
+
+.news-submit:disabled {
+  background: var(--news-green-dark);
+  cursor: default;
+}
+
+/* ── Page header ── */
+.news-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.news-header-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--news-text);
+  margin: 0;
+}
+
+.news-header-sub {
+  font-size: 13px;
+  color: var(--news-gray-text);
+  margin-top: 2px;
+}
+
+.news-count-badge {
+  background: var(--news-green-light);
+  color: var(--news-green-dark);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+/* ── Error banner ── */
+.news-error {
+  background: var(--news-red-light);
+  border: 0.5px solid var(--news-red-border);
+  border-radius: var(--news-radius);
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--news-red);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── Empty state ── */
+.news-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--news-gray-muted);
+}
+
+.news-empty-icon {
+  display: block;
+  margin: 0 auto 12px;
+  opacity: 0.4;
+}
+
+.news-empty p {
+  font-size: 14px;
+}
+
+/* ── Article list ── */
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ── Article card ── */
+.news-article {
+  padding: 1.25rem;
+}
+
+.news-article-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.news-article-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--news-text);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.news-article-id {
+  flex-shrink: 0;
+  background: var(--news-blue-light);
+  color: var(--news-blue);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 20px;
+}
+
+.news-article-content {
+  font-size: 13px;
+  color: var(--news-gray-text);
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+/* ── Article footer ── */
+.news-article-footer {
+  border-top: 0.5px solid var(--news-gray-border);
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.news-author {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.news-author-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--news-green-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.news-author-label {
+  font-size: 12px;
+  color: var(--news-gray-muted);
+}
+
+.news-author-id {
+  font-family: monospace;
+  color: var(--news-green);
+  font-size: 11px;
+}
+
+/* ── Delete button ── */
+.news-delete {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--news-red);
+  background: var(--news-red-light);
+  border: 0.5px solid var(--news-red-border);
+  border-radius: var(--news-radius-sm);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition:
+    color var(--news-transition),
+    background var(--news-transition),
+    border var(--news-transition);
+}
+
+.news-delete:hover:not(:disabled) {
+  background: #f5c4b3;
+  border-color: var(--news-red);
+}
+
+.news-delete:disabled {
+  color: var(--news-gray-muted);
+  background: #f3f4f6;
+  border-color: var(--news-gray-border);
+  cursor: default;
+}
